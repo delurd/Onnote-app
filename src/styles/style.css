@@ -1,0 +1,271 @@
+* {
+    margin: 0;
+    box-sizing: border-box;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    word-wrap: break-word;
+}
+
+body {
+    background-color: #FBCEAB;
+    color: #585F95;
+    overflow-x: hidden;
+}
+
+button {
+    cursor: pointer;
+}
+
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+
+::-webkit-scrollbar-thumb {
+    background: #585F95;
+}
+
+
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+main {
+    display: flex;
+}
+
+main>.left,
+main>.right {
+    padding: 10vh 5vw;
+}
+
+main>.left {
+    width: 30%;
+    height: 100vh;
+    overflow-y: auto;
+    display: flex;
+    justify-content: center;
+}
+
+main>.left>div {
+    width: 100%;
+
+}
+
+main>.left h1 {
+    font-size: 5vh;
+    margin-bottom: 5vh;
+    color: #585F95;
+}
+
+main>.left input {
+    background-color: transparent;
+    border: none;
+    outline: none;
+    font-size: 18px;
+    color: #585F95;
+    font-weight: bold;
+    width: 90%;
+}
+
+main>.left .title-input {
+    padding: 10px;
+    background-color: #F5F5F5;
+    border: 3px solid #585F95;
+}
+
+main>.left .title-input span {
+    color: rgba(88, 95, 149, 0.7);
+}
+
+main>.left textarea {
+    background-color: #F5F5F5;
+    border: 3px solid #585F95;
+    color: #585F95;
+    width: 100%;
+    height: 45vh;
+    resize: none;
+    outline: none;
+    padding: 10px;
+    font-size: 16px;
+}
+
+main>.left textarea:focus{
+    box-shadow: 5px 5px 0px #585F95;
+}
+
+main>.left button {
+    border: none;
+    color: #585F95;
+    font-size: 20px;
+    font-weight: bolder;
+    font-weight: bold;
+    padding: 10px 35px;
+    background-color: #FFC645;
+    border: 3px solid #585F95;
+    box-shadow: 5px 5px 0px #585F95;
+}
+
+main>.left button:active {
+    box-shadow: none;
+}
+
+main>.right {
+    padding-left: 0;
+    width: 70%;
+    height: 100vh;
+}
+
+main>.right>div {
+    background-color: #F6E9E1;
+    border: 3px solid #585F95;
+    box-shadow: 20px 20px 0px #585F95;
+    height: 100%;
+    overflow-y: auto;
+    position: relative;
+}
+
+.navbar {
+    display: flex;
+    background-color: #F6E9E1;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 4%;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.navbar>ul {
+    display: flex;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+.navbar>ul li {
+    margin-right: 10px;
+    padding: 5px;
+}
+
+.navbar>ul li button {
+    border: none;
+    color: #585F95;
+    font-size: 18px;
+    font-weight: bolder;
+    font-weight: bold;
+    padding: 10px 20px;
+    background-color: transparent;
+    border: 3px solid transparent;
+
+}
+
+.navbar>ul li button:hover {
+    border: 3px solid #585F95;
+}
+
+.navbar>ul li button.active {
+    border: 3px solid #585F95;
+    box-shadow: 5px 5px 0px #585F95;
+    background-color: #FBCEAB;
+}
+
+.navbar .search-input {
+    padding: 10px 15px;
+    border: 3px solid #585F95;
+    color: #585F95;
+    outline: none;
+    background-color: #F5F5F5;
+}
+
+.navbar .search-input:focus {
+    box-shadow: 5px 5px 0px #585F95;
+}
+
+.notes-list {
+    padding: 10px 4%;
+    display: grid;
+    column-gap: 20px;
+    row-gap: 20px;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.item-card {
+    background-color: #F5F5F5;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border: 3px solid #585F95;
+}
+
+.item-card:hover {
+    box-shadow: 7px 7px 0px #585F95;
+}
+
+.item-card>div {
+    padding: 3%;
+}
+
+.item-card .top {
+    background-color: #585F95;
+    color: #F5F5F5;
+    padding-top: 5%;
+    padding-bottom: 5%;
+}
+
+.item-card .center {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.item-card .footer {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+    border-top: 3px solid #585F95;
+}
+
+.item-card button {
+    border: none;
+    background-color: transparent;
+    border: 3px solid #585F95;
+    font-weight: bold;
+    color: #585F95;
+    padding: 5px 10px;
+}
+
+.item-card button:active {
+    background-color: #585F95;
+    color: #F5F5F5;
+}
+
+.item-card button:hover {
+    box-shadow: 3px 3px 0px #585F95;
+}
+
+
+
+@media only screen and (max-width: 1200px) {
+    main{
+        flex-direction: column;
+    }
+    main>.left, main>.right{
+        width: 100%;
+    }
+    main>.right{
+        padding-top: 10%;
+        padding-bottom: 10%;
+    }
+    .notes-list{
+        grid-template-columns: 1fr;
+    }
+    .navbar{
+        flex-direction: column;
+    }
+  }
